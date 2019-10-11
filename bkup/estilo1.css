@@ -1,0 +1,87 @@
+body{
+  background: #ebebeb;
+  margin:2% ;
+  color:black;
+  font-size: 20px;
+  width: 1300px;
+}
+
+.boton{
+  width: 200px;
+  height: 30px;
+  background: #ddcbaa;
+  margin:2%;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+#cara{
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  border:50px;
+  border-radius: 100px;
+  height: 200px;
+  width: 200px;
+}
+.marco-titulos{
+  background-color: #ebebeb;
+  display:inline-block;
+  width: 15%;
+  min-width: 200px;
+  height: 100%;
+  padding-top: 10px;
+  position: fixed;
+
+}
+
+h2,h3,h4{
+  color: #6384b3;
+}
+
+h2{
+    font-family: 'Prompt', sans-serif;
+    border-bottom: 3px #6384b3 solid;
+}
+ul{
+  padding-left: 0px;
+}
+
+li.upper{
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px dotted orange;
+  letter-spacing: 2px;
+}
+li{
+  list-style: none;
+}
+li.portfolio-icon{
+    display: inline;
+}
+section{
+  background: white;
+  padding: 5%;
+  margin: 2%;
+  border-radius: 15px;
+}
+.marco-contenido{
+  color:black;
+  width: 80%;
+  height: 100%;
+  float: right;
+  position: sticky;
+
+}
+
+.upper{
+  font-variant: small-caps;
+}
+
+.icon{
+  height: 180px;
+  width: 180px;
+  margin: 2%;
+}
