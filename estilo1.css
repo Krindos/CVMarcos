@@ -3,14 +3,34 @@ body{
   margin:2% ;
   color:black;
   font-size: 20px;
-  width: 1300px;
+  width: 100%;
+  min-width: 210px;
 }
+
+.encabezado {
+  grid-area: encabezado;
+}
+.menu {
+  grid-area: menu;
+}
+.contenido {
+  grid-area: contenido;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "encabezado encabezado"
+    "menu contenido"
+}
+
 /*Estilado del menu lateral izquierdo*/
 .marco-titulos{
+
+  grid-column-start: menu;
   background-color: #ebebeb;
-  display:inline-block;
-  width: 13%;
-  min-width: 200px;
   height: 100%;
   padding-top: 10px;
   position: fixed;
@@ -42,12 +62,12 @@ body{
 /*Estilado del bloque de contenido*/
 
 .marco-contenido{
+  grid-column-start: encabezado;
   color:black;
-  width: 80%;
   height: 100%;
-  float: right;
-  position: sticky;
-  resize: both;
+  padding-left: 230px;
+  padding-right: 10px;
+  resize: horizontal;
 }
 
 section{
@@ -55,6 +75,7 @@ section{
   padding: 5%;
   margin: 2%;
   border-radius: 15px;
+  text-size-adjust: 90%;
 }
 
 h2,h3,h4{
@@ -67,8 +88,11 @@ h2{
 }
 
 /*Formato para las listas*/
-ul{
-  padding-left: 0px;
+ul.conocimiento{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-left: 0%;
+  justify-items: center;
 }
 
 li.upper{
@@ -94,4 +118,44 @@ li.portfolio-icon{
   height: 180px;
   width: 180px;
   margin: 2%;
+}
+li.conocimientos{
+  color:goldenrod;
+  letter-spacing: 0em;
+}
+li.conocimientos:hover{
+  color:red;
+  letter-spacing: 0.2em;
+}
+
+
+/* @Medias */
+@media only screen and (max-width: 500px) {
+  body{
+    display: block;
+    font-size: 0,7em;
+  }
+  .marco-titulos{
+    display: block;
+    position: initial;
+  }
+  #cara{
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    border:4%;
+    border-radius: 50%;
+  }
+  
+
+  .marco-contenido{
+    width: 100%;
+    float: none;
+    position: relative;
+  }
+  
+  section{
+    width: 100%;
+  }
 }
