@@ -1,3 +1,5 @@
+
+
 body{
   background: #ebebeb;
   margin:2% ;
@@ -5,36 +7,34 @@ body{
   font-size: 20px;
   width: 100%;
   min-width: 210px;
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 450px auto;
+  grid-template-areas:
+    "barra contenido"
+    "barra contenido";
 }
 
+
+/*Layout*/
 .encabezado {
   grid-area: encabezado;
-}
-.menu {
-  grid-area: menu;
-}
-.contenido {
-  grid-area: contenido;
+  background-color: lawngreen;
 }
 
-.contenedor {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "encabezado encabezado"
-    "menu contenido"
-}
-
-/*Estilado del menu lateral izquierdo*/
-.marco-titulos{
-
-  grid-column-start: menu;
+div.marco-titulos{
+  grid-area: barra;
   background-color: #ebebeb;
-  height: 100%;
   padding-top: 10px;
-  position: fixed;
-  resize: both;
+}
+
+div.marco-contenido{
+  grid-area:contenido;
+  color:black;
+  height: 100%;
+  
+  padding-right: 10px;
+  resize: horizontal;
 }
 
 #cara{
@@ -61,14 +61,7 @@ body{
 
 /*Estilado del bloque de contenido*/
 
-.marco-contenido{
-  grid-column-start: encabezado;
-  color:black;
-  height: 100%;
-  padding-left: 230px;
-  padding-right: 10px;
-  resize: horizontal;
-}
+
 
 section{
   background: white;
@@ -76,6 +69,7 @@ section{
   margin: 2%;
   border-radius: 15px;
   text-size-adjust: 90%;
+  width: 95%;
 }
 
 h2,h3,h4{
@@ -109,20 +103,11 @@ li{
   font-variant: small-caps;
 }
 
-/* formato para las imagenes del portfolio*/
-li.portfolio-icon{
-    display: inline;
-}
-
-.icon{
-  height: 180px;
-  width: 180px;
-  margin: 2%;
-}
 li.conocimientos{
   color:goldenrod;
   letter-spacing: 0em;
 }
+
 li.conocimientos:hover{
   color:red;
   letter-spacing: 0.2em;
@@ -132,13 +117,12 @@ li.conocimientos:hover{
 /* @Medias */
 @media only screen and (max-width: 500px) {
   body{
-    display: block;
     font-size: 0,7em;
-  }
-  .marco-titulos{
-    display: block;
-    position: initial;
-  }
+    grid-template-areas: 
+      "barra barra"
+      "contenido contenido";
+  } 
+
   #cara{
     margin-top: 5%;
     margin-left: 2%;
@@ -148,14 +132,49 @@ li.conocimientos:hover{
     border-radius: 50%;
   }
   
+  .marco-titulos{
+    justify-content: start;
+    align-self: flex-start;
+    width: 100%;
+    height: auto;
+  }
 
   .marco-contenido{
-    width: 100%;
-    float: none;
-    position: relative;
+    padding-left: 10px;
   }
   
-  section{
-    width: 100%;
-  }
 }
+/* @media only screen and (min-width: 501px) {
+  body{
+    font-size: 1em;
+  }
+
+  div.contenedor{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "encabezado encabezado"
+      "barra contenido";
+  } 
+
+  #cara{
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    border:4px;
+    border-radius: 50%;
+  }
+  
+  .marco-titulos{
+    justify-items: left;
+    height: auto;
+    width: inherit
+  }
+
+  .marco-contenido{
+    padding-left: 230px;
+  }
+} */
